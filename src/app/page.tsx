@@ -4,7 +4,7 @@ import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
 import AboutSection from "@/components/AboutSection";
-import FinalCTASection from "@/components/FinalCTASection";
+import ReviewsSection from "@/components/ReviewsSection";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -51,7 +51,7 @@ export default function Home() {
           {/* Right Navigation Links */}
           <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
             <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Меню</a>
-            <a href="#cta" className="hover:text-white transition-colors cursor-pointer">Замовити</a>
+            <a href="#reviews" className="hover:text-white transition-colors cursor-pointer">Відгуки</a>
             <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
           </div>
         </div>
@@ -144,10 +144,8 @@ export default function Home() {
       {/* About Us section describing the values */}
       <AboutSection />
 
-      {/* Massive Call To Action Section (White background) */}
-      <div id="cta">
-        <FinalCTASection />
-      </div>
+      {/* Reviews Section with Infinite Image Carousel */}
+      <ReviewsSection />
     </main>
   );
 }
