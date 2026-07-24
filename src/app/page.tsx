@@ -106,7 +106,7 @@ export default function Home() {
       {/* Huge Background Text (Fades out with scroll) */}
       <motion.div 
         style={{ opacity: burgerOpacity }}
-        className="fixed inset-0 w-full h-screen flex items-center justify-between z-0 pointer-events-none px-[4vw]"
+        className="hidden md:flex fixed inset-0 w-full h-screen items-center justify-between z-0 pointer-events-none px-[4vw]"
       >
         <h1 
           className="relative text-[18vw] md:text-[14vw] font-serif text-[#0B0C10] font-bold flex w-full justify-between"
