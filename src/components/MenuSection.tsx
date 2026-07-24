@@ -68,17 +68,17 @@ export default function MenuSection() {
                 
                 {/* Hover overlay hint */}
                 <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                      Вибух
                    </div>
                 </div>
               </div>
               
               {/* Text Info */}
-              <h3 className="text-xl md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight text-center">
+              <h3 className="text-sm sm:text-lg md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight text-center px-1">
                 {burger.name}
               </h3>
-              <p className="text-lg md:text-3xl font-medium text-[#0B0C10]/80 mt-1 md:mt-2">
+              <p className="text-xs sm:text-base md:text-3xl font-medium text-[#0B0C10]/80 mt-1 md:mt-2">
                 {burger.price}
               </p>
             </div>
