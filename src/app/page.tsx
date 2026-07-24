@@ -4,7 +4,7 @@ import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
 import AboutSection from "@/components/AboutSection";
-import LocationsSection from "@/components/LocationsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -51,7 +51,7 @@ export default function Home() {
           {/* Right Navigation Links */}
           <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
             <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Меню</a>
-            <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Локації</a>
+            <a href="#cta" className="hover:text-white transition-colors cursor-pointer">Замовити</a>
             <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
           </div>
         </div>
@@ -144,8 +144,10 @@ export default function Home() {
       {/* About Us section describing the values */}
       <AboutSection />
 
-      {/* Locations Section (White background, receives the yellow bottom wave) */}
-      <LocationsSection />
+      {/* Massive Call To Action Section (White background) */}
+      <div id="cta">
+        <FinalCTASection />
+      </div>
     </main>
   );
 }
