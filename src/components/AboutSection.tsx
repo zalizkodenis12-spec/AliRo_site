@@ -113,8 +113,8 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Bottom Wave Divider pointing down to whatever is next (or just page end) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform translate-y-[calc(100%-1px)]">
+      {/* Bottom Wave Divider pointing down to whatever is next */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform translate-y-[calc(100%-1px)] -scale-y-100 z-20">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -126,7 +126,6 @@ export default function AboutSection() {
           ></path>
         </svg>
       </div>
-
     </section>
   );
 }
