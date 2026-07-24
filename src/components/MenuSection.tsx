@@ -14,7 +14,7 @@ export default function MenuSection() {
   const [selectedBurger, setSelectedBurger] = useState<{name: string, folder: string} | null>(null);
 
   return (
-    <section className="relative w-full bg-[#FFB800] z-20 pb-32">
+    <section id="menu" className="relative w-full bg-[#FFB800] z-20 pb-32">
       {/* Top Smoother Wavy SVG Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)]">
         <svg
@@ -31,7 +31,7 @@ export default function MenuSection() {
 
       <div className="max-w-5xl mx-auto px-6 pt-24 text-center">
         <h2 className="text-7xl md:text-8xl font-extrabold text-[#0B0C10] mb-16 tracking-wide drop-shadow-md">
-          Ознайомтеся з колекцією BurgerMaster
+          Ознайомтеся з колекцією BurgerMax
         </h2>
         
         {/* Changed to 2 columns for a perfect 2x2 grid */}

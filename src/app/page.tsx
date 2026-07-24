@@ -4,6 +4,7 @@ import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
 import AboutSection from "@/components/AboutSection";
+import LocationsSection from "@/components/LocationsSection";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -49,9 +50,9 @@ export default function Home() {
 
           {/* Right Navigation Links */}
           <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
-            <a href="#" className="hover:text-white transition-colors cursor-pointer">Меню</a>
-            <a href="#" className="hover:text-white transition-colors cursor-pointer">Локації</a>
-            <a href="#" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
+            <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Меню</a>
+            <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Локації</a>
+            <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
           </div>
         </div>
 
@@ -143,8 +144,8 @@ export default function Home() {
       {/* About Us section describing the values */}
       <AboutSection />
 
-      {/* Spacer to allow the bottom wave to be visible */}
-      <div className="w-full h-32 bg-white relative z-10"></div>
+      {/* Locations Section (White background, receives the yellow bottom wave) */}
+      <LocationsSection />
     </main>
   );
 }
