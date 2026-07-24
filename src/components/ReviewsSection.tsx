@@ -35,15 +35,15 @@ export default function ReviewsSection() {
     <section id="reviews" className="relative w-full bg-white z-10 py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
       
       {/* Infinite scrolling images in the background */}
-      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.05] pointer-events-none -rotate-3 scale-110 blur-sm">
+      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.25] pointer-events-none -rotate-3 scale-110">
         <motion.div 
           animate={{ x: [0, -2000] }} 
-          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
           className="flex gap-16 min-w-max items-center"
         >
           {/* Repeat images a few times to ensure infinite scroll */}
           {[...BURGER_IMAGES, ...BURGER_IMAGES, ...BURGER_IMAGES, ...BURGER_IMAGES].map((src, i) => (
-            <div key={i} className="w-[450px] h-[450px] rounded-[3rem] overflow-hidden grayscale">
+            <div key={i} className="w-[450px] h-[450px] rounded-[3rem] overflow-hidden drop-shadow-xl">
               <img src={src} alt="Burger pattern" className="w-full h-full object-cover" />
             </div>
           ))}

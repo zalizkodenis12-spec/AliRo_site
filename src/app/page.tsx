@@ -5,6 +5,7 @@ import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
 import AboutSection from "@/components/AboutSection";
 import ReviewsSection from "@/components/ReviewsSection";
+import Footer from "@/components/Footer";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -52,7 +53,7 @@ export default function Home() {
           <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
             <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Меню</a>
             <a href="#reviews" className="hover:text-white transition-colors cursor-pointer">Відгуки</a>
-            <a href="#locations" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
+            <a href="#contacts" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
           </div>
         </div>
 
@@ -146,6 +147,9 @@ export default function Home() {
 
       {/* Reviews Section with Infinite Image Carousel */}
       <ReviewsSection />
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
