@@ -20,13 +20,13 @@ const ScrollBlock = ({ align, title, desc, top }: { align: "left" | "right", tit
       exit={{ opacity: 0, y: -100 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
-      className={`absolute w-[90%] left-[5%] md:w-full max-w-[320px] md:max-w-[320px] lg:max-w-[380px] p-6 md:p-0 bg-white/70 backdrop-blur-md rounded-2xl md:bg-transparent md:backdrop-blur-none md:rounded-none z-10 ${
+      className={`absolute w-[90%] left-[5%] md:w-full max-w-[320px] lg:max-w-[380px] p-0 z-10 ${
         align === "left" ? "md:left-[5%] md:right-auto" : "md:right-[5%] md:left-auto"
       }`}
       style={{ top }}
     >
-      <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 drop-shadow-sm whitespace-pre-line">{title}</h3>
-      <p className="text-lg md:text-2xl font-sans font-medium text-[#0B0C10] md:text-[#0B0C10]/80 leading-relaxed">{desc}</p>
+      <h3 className="text-2xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-3 md:mb-6 drop-shadow-sm whitespace-pre-line">{title}</h3>
+      <p className="text-base md:text-2xl font-sans font-medium text-[#0B0C10] leading-relaxed">{desc}</p>
     </motion.div>
   );
 };

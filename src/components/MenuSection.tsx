@@ -50,8 +50,8 @@ export default function MenuSection() {
           Ознайомтеся з колекцією BurgerMax
         </h2>
         
-        {/* Changed to 2 columns for a perfect 2x2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
+        {/* 2 columns grid for both mobile and desktop */}
+        <div className="grid grid-cols-2 gap-x-4 md:gap-x-12 gap-y-12 md:gap-y-16">
           {BURGERS.map((burger) => (
             <div 
               key={burger.id}
@@ -68,17 +68,17 @@ export default function MenuSection() {
                 
                 {/* Hover overlay hint */}
                 <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-4 py-2 rounded-full text-base md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                     Натисніть для вибуху
+                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-2 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                     Вибух
                    </div>
                 </div>
               </div>
               
               {/* Text Info */}
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight">
+              <h3 className="text-xl md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight text-center">
                 {burger.name}
               </h3>
-              <p className="text-2xl md:text-3xl font-medium text-[#0B0C10]/80 mt-2">
+              <p className="text-lg md:text-3xl font-medium text-[#0B0C10]/80 mt-1 md:mt-2">
                 {burger.price}
               </p>
             </div>

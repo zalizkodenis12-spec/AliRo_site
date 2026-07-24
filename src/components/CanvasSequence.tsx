@@ -63,14 +63,25 @@ export default function CanvasSequence({ scrollContainerRef, folderPath = "/imag
     if (img && img.complete) {
       // Clear canvas before drawing
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Calculate ratios to emulate object-fit: cover
       const hRatio = canvas.width / img.width;
       const vRatio = canvas.height / img.height;
-      const ratio = Math.max(hRatio, vRatio);
+      
+      // On mobile, make the burger much smaller so it fits under the text
+      const isMobile = window.innerWidth < 768;
+      let ratio;
+      if (isMobile) {
+        const mobileHRatio = (canvas.width * 0.9) / img.width;
+        const mobileVRatio = (canvas.height * 0.4) / img.height;
+        ratio = Math.min(mobileHRatio, mobileVRatio);
+      } else {
+        ratio = Math.max(hRatio, vRatio);
+      }
       
       const centerShift_x = (canvas.width - img.width * ratio) / 2;
-      const centerShift_y = (canvas.height - img.height * ratio) / 2;
+      const centerShift_y = (canvas.height - img.height * ratio) / 2 + (isMobile ? canvas.height * 0.1 : 0);
       
       ctx.drawImage(
         img,
@@ -101,14 +112,27 @@ export default function CanvasSequence({ scrollContainerRef, folderPath = "/imag
           const img = images[index];
           if (img && img.complete) {
             const ctx = canvas.getContext("2d");
+            if (!ctx) return;
             const hRatio = canvas.width / img.width;
             const vRatio = canvas.height / img.height;
-            const ratio = Math.max(hRatio, vRatio);
+            // On mobile, make the burger much smaller so it fits under the text
+            const isMobile = window.innerWidth < 768;
+            let ratio;
+            if (isMobile) {
+              const mobileHRatio = (canvas.width * 0.9) / img.width;
+              const mobileVRatio = (canvas.height * 0.4) / img.height;
+              ratio = Math.min(mobileHRatio, mobileVRatio);
+            } else {
+              ratio = Math.max(hRatio, vRatio);
+            }
             const centerShift_x = (canvas.width - img.width * ratio) / 2;
-            const centerShift_y = (canvas.height - img.height * ratio) / 2;
+            const centerShift_y = (canvas.height - img.height * ratio) / 2 + (isMobile ? canvas.height * 0.1 : 0);
             
-            ctx?.clearRect(0, 0, canvas.width, canvas.height);
-            ctx?.drawImage(
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Fill white background just in case, though mix-blend handles it
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(
               img,
               0, 0, img.width, img.height,
               centerShift_x, centerShift_y, img.width * ratio, img.height * ratio

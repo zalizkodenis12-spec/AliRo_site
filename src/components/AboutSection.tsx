@@ -57,7 +57,7 @@ export default function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full">
+        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-16 w-full overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory px-4 md:px-0" style={{ scrollbarWidth: 'none' }}>
           
           {/* Feature 1 */}
           <motion.div 
@@ -65,7 +65,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center group"
+            className="flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col items-center text-center group"
           >
             <div className="w-28 h-28 rounded-full border-4 border-[#0B0C10] flex items-center justify-center mb-6 group-hover:bg-[#0B0C10] group-hover:text-[#FFB800] transition-colors duration-300">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
@@ -82,7 +82,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center group"
+            className="flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col items-center text-center group"
           >
             <div className="w-28 h-28 rounded-full border-4 border-[#0B0C10] flex items-center justify-center mb-6 group-hover:bg-[#0B0C10] group-hover:text-[#FFB800] transition-colors duration-300">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
@@ -100,7 +100,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center group"
+            className="flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col items-center text-center group"
           >
             <div className="w-28 h-28 rounded-full border-4 border-[#0B0C10] flex items-center justify-center mb-6 group-hover:bg-[#0B0C10] group-hover:text-[#FFB800] transition-colors duration-300">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">

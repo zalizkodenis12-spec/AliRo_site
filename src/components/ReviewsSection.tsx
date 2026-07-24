@@ -69,7 +69,7 @@ export default function ReviewsSection() {
           ></motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory px-4 md:px-0" style={{ scrollbarWidth: 'none' }}>
           {REVIEWS.map((review, idx) => (
             <motion.div 
               key={idx}
@@ -77,7 +77,7 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              className="bg-white/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
+              className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
             >
               <div>
                 <div className="text-[#FFB800] mb-6 md:mb-8 flex gap-1">
