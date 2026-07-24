@@ -3,6 +3,7 @@
 import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
+import AboutSection from "@/components/AboutSection";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -37,7 +38,7 @@ export default function Home() {
           {/* Left Navigation Links */}
           <div className="hidden md:flex flex-1 items-center justify-between pr-12 lg:pr-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
             <a href="#" className="hover:text-white transition-colors cursor-pointer">Головна</a>
-            <a href="#" className="hover:text-white transition-colors cursor-pointer">Про нас</a>
+            <a href="#about" className="hover:text-white transition-colors cursor-pointer">Про нас</a>
             <a href="#history" className="hover:text-white transition-colors cursor-pointer">Історія</a>
           </div>
 
@@ -138,6 +139,9 @@ export default function Home() {
 
       {/* The History Section telling the story of BurgerMax */}
       <HistorySection />
+
+      {/* About Us section describing the values */}
+      <AboutSection />
     </main>
   );
 }
