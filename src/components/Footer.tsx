@@ -2,23 +2,23 @@
 
 export default function Footer() {
   return (
-    <footer id="contacts" className="relative w-full bg-[#FFB800] text-[#0B0C10] pt-12 pb-20 z-20">
+    <footer id="contacts" className="relative w-full bg-[#FFB800] text-[#0B0C10] pt-8 pb-12 z-20">
       
       {/* Top Wave Divider pointing up to ReviewsSection */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)] z-20 pointer-events-none">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[100px] md:h-[150px]"
+          className="relative block w-full h-[60px] md:h-[100px]"
         >
           <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.36,128.5,207,112.5,247.38,103.2,285.34,81.4,321.39,56.44Z"
+            d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
             className="fill-[#FFB800]"
           ></path>
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 text-center md:text-left mt-8">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 text-center md:text-left mt-2">
         
         {/* Logo and brief */}
         <div className="md:col-span-4 flex flex-col items-center md:items-start">
