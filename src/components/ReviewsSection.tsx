@@ -32,7 +32,7 @@ const BURGER_IMAGES = [
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="relative w-full bg-white z-10 py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+    <section id="reviews" className="relative w-full bg-white z-10 py-16 md:py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
       
       {/* Infinite scrolling images in the background */}
       <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.12] pointer-events-none -rotate-3 scale-110">
@@ -43,7 +43,7 @@ export default function ReviewsSection() {
         >
           {/* Repeat images a few times to ensure infinite scroll */}
           {[...BURGER_IMAGES, ...BURGER_IMAGES, ...BURGER_IMAGES, ...BURGER_IMAGES].map((src, i) => (
-            <div key={i} className="w-[450px] h-[450px] rounded-[3rem] overflow-hidden drop-shadow-xl">
+            <div key={i} className="w-[250px] h-[250px] md:w-[450px] md:h-[450px] rounded-[2rem] md:rounded-[3rem] overflow-hidden drop-shadow-xl">
               <img src={src} alt="Burger pattern" className="w-full h-full object-cover" />
             </div>
           ))}
@@ -52,12 +52,12 @@ export default function ReviewsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
-        <div className="text-center mb-24">
+        <div className="text-center mb-16 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl font-serif font-bold text-[#0B0C10] mb-8"
+            className="text-5xl md:text-8xl font-serif font-bold text-[#0B0C10] mb-6 md:mb-8"
           >
             Що кажуть про нас
           </motion.h2>
@@ -77,17 +77,17 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              className="bg-white/95 backdrop-blur-xl border border-black/5 p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
+              className="bg-white/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
             >
               <div>
-                <div className="text-[#FFB800] mb-8 flex gap-1">
+                <div className="text-[#FFB800] mb-6 md:mb-8 flex gap-1">
                   {[...Array(review.rating)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 drop-shadow-sm">
+                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-7 md:h-7 drop-shadow-sm">
                       <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-xl md:text-2xl font-medium text-[#0B0C10]/90 mb-12 leading-relaxed italic relative z-10">
+                <p className="text-lg md:text-2xl font-medium text-[#0B0C10]/90 mb-8 md:mb-12 leading-relaxed italic relative z-10">
                   "{review.text}"
                 </p>
               </div>

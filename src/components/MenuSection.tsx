@@ -45,13 +45,13 @@ export default function MenuSection() {
         <div className="absolute bottom-[50%] left-[40%] w-64 h-64 rounded-full bg-[#0B0C10] opacity-5"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 pt-24 text-center relative z-10">
-        <h2 className="text-7xl md:text-8xl font-extrabold text-[#0B0C10] mb-16 tracking-wide drop-shadow-md">
+      <div className="max-w-5xl mx-auto px-6 pt-16 md:pt-24 text-center relative z-10">
+        <h2 className="text-5xl md:text-8xl font-extrabold text-[#0B0C10] mb-12 md:mb-16 tracking-wide drop-shadow-md">
           Ознайомтеся з колекцією BurgerMax
         </h2>
         
         {/* Changed to 2 columns for a perfect 2x2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
           {BURGERS.map((burger) => (
             <div 
               key={burger.id}
@@ -59,7 +59,7 @@ export default function MenuSection() {
               className="group cursor-pointer flex flex-col items-center"
             >
               {/* Image using the first frame of its sequence */}
-              <div className="w-full aspect-square bg-white rounded-3xl shadow-lg mb-6 overflow-hidden relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl flex items-center justify-center">
+              <div className="w-full aspect-square bg-white rounded-3xl shadow-lg mb-4 md:mb-6 overflow-hidden relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl flex items-center justify-center">
                 <img 
                   src={`${burger.folder}/ezgif-frame-001.jpg`} 
                   alt={burger.name} 
@@ -68,17 +68,17 @@ export default function MenuSection() {
                 
                 {/* Hover overlay hint */}
                 <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-4 py-2 rounded-full text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-4 py-2 rounded-full text-base md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                      Натисніть для вибуху
                    </div>
                 </div>
               </div>
               
               {/* Text Info */}
-              <h3 className="text-4xl font-bold text-[#0B0C10] transition-colors">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight">
                 {burger.name}
               </h3>
-              <p className="text-3xl font-medium text-[#0B0C10]/80 mt-2">
+              <p className="text-2xl md:text-3xl font-medium text-[#0B0C10]/80 mt-2">
                 {burger.price}
               </p>
             </div>

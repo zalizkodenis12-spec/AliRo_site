@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
 import HistorySection from "@/components/HistorySection";
@@ -18,16 +20,19 @@ const ScrollBlock = ({ align, title, desc, top }: { align: "left" | "right", tit
       exit={{ opacity: 0, y: -100 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
-      className={`absolute w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] px-4 md:px-0 z-10`}
-      style={{ top, ...(align === "left" ? { left: "5%" } : { right: "5%" }) }}
+      className={`absolute w-[90%] left-[5%] md:w-full max-w-[320px] md:max-w-[320px] lg:max-w-[380px] p-6 md:p-0 bg-white/70 backdrop-blur-md rounded-2xl md:bg-transparent md:backdrop-blur-none md:rounded-none z-10 ${
+        align === "left" ? "md:left-[5%] md:right-auto" : "md:right-[5%] md:left-auto"
+      }`}
+      style={{ top }}
     >
-      <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-6 drop-shadow-sm">{title}</h3>
-      <p className="text-xl md:text-2xl font-sans font-medium text-[#0B0C10]/80 leading-relaxed">{desc}</p>
+      <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 drop-shadow-sm whitespace-pre-line">{title}</h3>
+      <p className="text-lg md:text-2xl font-sans font-medium text-[#0B0C10] md:text-[#0B0C10]/80 leading-relaxed">{desc}</p>
     </motion.div>
   );
 };
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   // Fade out the BURGER text as the user scrolls down the first 600px
   const burgerOpacity = useTransform(scrollY, [0, 600], [0.9, 0]);
@@ -45,7 +50,7 @@ export default function Home() {
           </div>
 
           {/* Center Logo (Handwritten / Caveat) */}
-          <div className="flex-shrink-0 text-5xl font-bold text-[#0B0C10] whitespace-nowrap px-8">
+          <div className="flex-1 md:flex-none text-left md:text-center text-4xl md:text-5xl font-bold text-[#0B0C10] whitespace-nowrap md:px-8">
             BurgerMax
           </div>
 
@@ -55,7 +60,33 @@ export default function Home() {
             <a href="#reviews" className="hover:text-white transition-colors cursor-pointer">Відгуки</a>
             <a href="#contacts" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
           </div>
+
+          {/* Mobile Hamburger Icon */}
+          <button 
+            className="md:hidden flex items-center justify-center p-2 text-[#0B0C10] z-[60] relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-[#FFB800] pb-6 px-6 shadow-xl flex flex-col gap-4 font-sans font-semibold text-lg tracking-widest uppercase text-[#0B0C10] md:hidden z-50 border-t border-[#0B0C10]/10">
+            <a href="#" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Головна</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Про нас</a>
+            <a href="#history" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Історія</a>
+            <a href="#menu" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Меню</a>
+            <a href="#reviews" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Відгуки</a>
+            <a href="#contacts" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Контакти</a>
+          </div>
+        )}
 
         {/* Bottom Wavy SVG for Navbar */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform translate-y-[calc(100%-1px)] -scale-y-100">
@@ -78,7 +109,7 @@ export default function Home() {
         className="fixed inset-0 w-full h-screen flex items-center justify-between z-0 pointer-events-none px-[4vw]"
       >
         <h1 
-          className="relative text-[12vw] md:text-[14vw] font-serif text-[#0B0C10] font-bold flex w-full justify-between"
+          className="relative text-[18vw] md:text-[14vw] font-serif text-[#0B0C10] font-bold flex w-full justify-between"
           style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
         >
           {/* Left Side: B U R */}

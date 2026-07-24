@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative w-full bg-[#FFB800] z-20 pt-24 pb-32">
+    <section id="about" className="relative w-full bg-[#FFB800] z-20 pt-16 md:pt-24 pb-16 md:pb-32">
       
       {/* Top Wave Divider pointing up to HistorySection */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)]">
@@ -26,7 +26,7 @@ export default function AboutSection() {
           <motion.div 
             animate={{ x: [0, -1000] }} 
             transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-            className="text-[12vw] font-black uppercase tracking-tighter"
+            className="text-[16vw] md:text-[12vw] font-black uppercase tracking-tighter"
           >
             СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
           </motion.div>
@@ -35,7 +35,7 @@ export default function AboutSection() {
           <motion.div 
             animate={{ x: [-1000, 0] }} 
             transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-            className="text-[12vw] font-black uppercase tracking-tighter"
+            className="text-[16vw] md:text-[12vw] font-black uppercase tracking-tighter"
           >
             СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
           </motion.div>
@@ -50,14 +50,14 @@ export default function AboutSection() {
           viewport={{ once: true, margin: "-20%" }}
           className="text-center"
         >
-          <h2 className="text-6xl md:text-8xl font-serif font-bold mb-8 drop-shadow-sm">Хто ми такі?</h2>
-          <p className="text-2xl md:text-3xl font-medium max-w-4xl mx-auto leading-relaxed mb-24">
+          <h2 className="text-5xl md:text-8xl font-serif font-bold mb-6 md:mb-8 drop-shadow-sm">Хто ми такі?</h2>
+          <p className="text-xl md:text-3xl font-medium max-w-4xl mx-auto leading-relaxed mb-16 md:mb-24">
             Ми — команда фанатів вуличної їжі, які вирішили, що фастфуд не обов'язково має бути шкідливим або "пластиковим". 
             Ми готуємо так, як готували б для своїх друзів на власному задньому дворі.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full">
           
           {/* Feature 1 */}
           <motion.div 
