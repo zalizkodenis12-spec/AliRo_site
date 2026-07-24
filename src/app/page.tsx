@@ -2,6 +2,7 @@
 
 import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
+import HistorySection from "@/components/HistorySection";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -37,7 +38,7 @@ export default function Home() {
           <div className="hidden md:flex flex-1 items-center justify-between pr-12 lg:pr-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
             <a href="#" className="hover:text-white transition-colors cursor-pointer">Головна</a>
             <a href="#" className="hover:text-white transition-colors cursor-pointer">Про нас</a>
-            <a href="#" className="hover:text-white transition-colors cursor-pointer">Історія</a>
+            <a href="#history" className="hover:text-white transition-colors cursor-pointer">Історія</a>
           </div>
 
           {/* Center Logo (Handwritten / Caveat) */}
@@ -135,8 +136,8 @@ export default function Home() {
       {/* The new Menu Section that slides up after the animation finishes */}
       <MenuSection />
 
-      {/* Pure White Section at the end as requested (long enough for scrolling) */}
-      <div className="w-full h-[200vh] bg-white relative z-10"></div>
+      {/* The History Section telling the story of BurgerMax */}
+      <HistorySection />
     </main>
   );
 }
