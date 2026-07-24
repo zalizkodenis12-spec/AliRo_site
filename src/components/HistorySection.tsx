@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 
 export default function HistorySection() {
   return (
-    <section id="history" className="relative w-full bg-white z-20 flex flex-col md:flex-row">
+    <section id="history" className="relative w-full bg-white z-10 flex flex-col md:flex-row">
       
       {/* Left Side: Sticky (Stays on screen while right side scrolls) */}
-      <div className="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 bg-[#0B0C10] flex flex-col items-center justify-center overflow-hidden">
-        {/* Abstract/Dark background image */}
-        <div className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-black/50"></div>
+      <div className="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 bg-[#F9F9F9] flex flex-col items-center justify-center overflow-hidden">
+        {/* Light background image */}
+        <div className="absolute inset-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=800')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-white/70"></div>
         
-        <h2 className="text-6xl md:text-8xl font-serif font-bold text-[#FFB800] relative z-10 text-center mb-6 drop-shadow-lg px-4">
+        <h2 className="text-6xl md:text-8xl font-serif font-bold text-[#0B0C10] relative z-10 text-center mb-6 drop-shadow-sm px-4">
           Наша Історія
         </h2>
         <div className="w-24 h-1 bg-[#FFB800] relative z-10 mb-6"></div>
-        <p className="text-white/90 text-xl md:text-2xl font-medium relative z-10 font-sans text-center px-8">
+        <p className="text-[#0B0C10]/80 text-xl md:text-2xl font-medium relative z-10 font-sans text-center px-8">
           Як ми створювали BurgerMax
         </p>
       </div>
