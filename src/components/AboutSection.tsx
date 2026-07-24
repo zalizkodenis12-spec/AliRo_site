@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative w-full bg-[#FFB800] z-20 pt-24 pb-32 overflow-hidden">
+    <section id="about" className="relative w-full bg-[#FFB800] z-20 pt-24 pb-32">
       
       {/* Top Wave Divider pointing up to HistorySection */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)]">
@@ -20,24 +20,26 @@ export default function AboutSection() {
         </svg>
       </div>
 
-      {/* Infinite scrolling marquee text in the background */}
-      <div className="absolute top-1/4 left-0 w-full flex whitespace-nowrap opacity-10 pointer-events-none -rotate-2 scale-110">
-        <motion.div 
-          animate={{ x: [0, -1000] }} 
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          className="text-[12vw] font-black uppercase tracking-tighter"
-        >
-          СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
-        </motion.div>
-      </div>
-      <div className="absolute bottom-1/4 left-0 w-full flex whitespace-nowrap opacity-10 pointer-events-none rotate-2 scale-110">
-        <motion.div 
-          animate={{ x: [-1000, 0] }} 
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          className="text-[12vw] font-black uppercase tracking-tighter"
-        >
-          СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
-        </motion.div>
+      {/* Infinite scrolling marquee text in the background (wrapped in overflow-hidden) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-full flex whitespace-nowrap opacity-10 -rotate-2 scale-110">
+          <motion.div 
+            animate={{ x: [0, -1000] }} 
+            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+            className="text-[12vw] font-black uppercase tracking-tighter"
+          >
+            СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
+          </motion.div>
+        </div>
+        <div className="absolute bottom-1/4 left-0 w-full flex whitespace-nowrap opacity-10 rotate-2 scale-110">
+          <motion.div 
+            animate={{ x: [-1000, 0] }} 
+            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+            className="text-[12vw] font-black uppercase tracking-tighter"
+          >
+            СМАЧНО • СОКОВИТО • СПРАВЖНЄ М'ЯСО • БЕЗ КОМПРОМІСІВ • СМАЧНО • СОКОВИТО • 
+          </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-[#0B0C10] flex flex-col items-center">
@@ -110,6 +112,21 @@ export default function AboutSection() {
           </motion.div>
         </div>
       </div>
+
+      {/* Bottom Wave Divider pointing down to whatever is next (or just page end) */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform translate-y-[calc(100%-1px)]">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[60px] md:h-[100px]"
+        >
+          <path
+            d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
+            className="fill-[#FFB800]"
+          ></path>
+        </svg>
+      </div>
+
     </section>
   );
 }

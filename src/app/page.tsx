@@ -142,6 +142,9 @@ export default function Home() {
 
       {/* About Us section describing the values */}
       <AboutSection />
+
+      {/* Spacer to allow the bottom wave to be visible */}
+      <div className="w-full h-32 bg-white relative z-10"></div>
     </main>
   );
 }
