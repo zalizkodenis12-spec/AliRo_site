@@ -29,7 +29,16 @@ export default function MenuSection() {
         </svg>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 pt-24 text-center">
+      {/* Decorative Background Circles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-white opacity-10 blur-xl"></div>
+        <div className="absolute top-1/4 right-10 w-40 h-40 rounded-full bg-white opacity-20 blur-md"></div>
+        <div className="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-white opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-40 left-1/4 w-64 h-64 rounded-full bg-white opacity-15 blur-lg"></div>
+        <div className="absolute bottom-10 right-1/4 w-32 h-32 rounded-full bg-white opacity-25 blur-sm"></div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-6 pt-24 text-center relative z-10">
         <h2 className="text-7xl md:text-8xl font-extrabold text-[#0B0C10] mb-16 tracking-wide drop-shadow-md">
           Ознайомтеся з колекцією BurgerMax
         </h2>
