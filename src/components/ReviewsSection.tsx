@@ -35,7 +35,7 @@ export default function ReviewsSection() {
     <section id="reviews" className="relative w-full bg-white z-10 py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
       
       {/* Infinite scrolling images in the background */}
-      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.25] pointer-events-none -rotate-3 scale-110">
+      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.12] pointer-events-none -rotate-3 scale-110">
         <motion.div 
           animate={{ x: [0, -2000] }} 
           transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
