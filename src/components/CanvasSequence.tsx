@@ -75,10 +75,14 @@ export default function CanvasSequence({
       
       const hRatio = canvas.width / img.width;
       const vRatio = canvas.height / img.height;
-      const ratio = Math.max(hRatio, vRatio);
+      const ratio = Math.min(hRatio, vRatio); // Use Math.min for contain instead of cover
       
       const centerShift_x = (canvas.width - img.width * ratio) / 2;
       const centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+      if (index === 0) {
+        console.log("Frame size:", img.width, "x", img.height, "Canvas size:", canvas.width, "x", canvas.height);
+      }
       
       ctx.drawImage(
         img,
@@ -112,7 +116,7 @@ export default function CanvasSequence({
             if (!ctx) return;
             const hRatio = canvas.width / img.width;
             const vRatio = canvas.height / img.height;
-            const ratio = Math.max(hRatio, vRatio);
+            const ratio = Math.min(hRatio, vRatio); // Use Math.min for contain
             
             const centerShift_x = (canvas.width - img.width * ratio) / 2;
             const centerShift_y = (canvas.height - img.height * ratio) / 2;
@@ -146,7 +150,7 @@ export default function CanvasSequence({
       )}
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
       />
     </div>
   );
