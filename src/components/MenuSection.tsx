@@ -69,6 +69,16 @@ export default function MenuSection() {
             </div>
           ))}
         </div>
+
+        {/* See More Button */}
+        <div className="mt-16 md:mt-24">
+          <a 
+            href="#catalog" 
+            className="inline-block bg-[#1A1A1A] hover:bg-black text-white px-10 py-4 rounded-full text-lg md:text-xl font-semibold tracking-wide shadow-2xl hover:shadow-black/40 hover:-translate-y-1 transition-all duration-300"
+          >
+            Дивитись ще
+          </a>
+        </div>
       </div>
 
       {/* Bottom Smoother Wavy SVG Divider (Flipped Vertically) */}
