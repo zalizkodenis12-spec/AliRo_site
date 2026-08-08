@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="relative w-full bg-white">
       {/* Absolute Top Navigation Bar (Disappears on scroll) */}
-      <div className="absolute top-0 left-0 w-full pt-4 pb-6 bg-[#FFB800] z-50">
+      <div className="absolute top-0 left-0 w-full pt-4 pb-6 bg-[#7BA341] z-50">
         <div className="relative z-10 flex items-center w-full px-6 md:px-16">
           {/* Left Navigation Links */}
           <div className="hidden md:flex flex-1 items-center justify-between pr-12 lg:pr-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
@@ -59,7 +59,7 @@ export default function Home() {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-[#FFB800] pb-6 px-6 shadow-xl flex flex-col gap-4 font-sans font-semibold text-lg tracking-widest uppercase text-[#0B0C10] md:hidden z-50 border-t border-[#0B0C10]/10">
+          <div className="absolute top-full left-0 w-full bg-[#7BA341] pb-6 px-6 shadow-xl flex flex-col gap-4 font-sans font-semibold text-lg tracking-widest uppercase text-[#0B0C10] md:hidden z-50 border-t border-[#0B0C10]/10">
             <a href="#" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Головна</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Про нас</a>
             <a href="#history" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Історія</a>
@@ -78,7 +78,7 @@ export default function Home() {
           >
             <path
               d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-              className="fill-[#FFB800]"
+              className="fill-[#7BA341]"
             ></path>
           </svg>
         </div>

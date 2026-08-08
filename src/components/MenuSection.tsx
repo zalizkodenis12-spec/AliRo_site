@@ -14,7 +14,7 @@ export default function MenuSection() {
   const [selectedBurger, setSelectedBurger] = useState<{name: string, folder: string} | null>(null);
 
   return (
-    <section id="menu" className="relative w-full bg-[#FFB800] z-20 pb-32">
+    <section id="menu" className="relative w-full bg-[#7BA341] z-20 pb-32">
       {/* Top Smoother Wavy SVG Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)]">
         <svg
@@ -24,7 +24,7 @@ export default function MenuSection() {
         >
           <path
             d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-            className="fill-[#FFB800]"
+            className="fill-[#7BA341]"
           ></path>
         </svg>
       </div>
@@ -95,7 +95,7 @@ export default function MenuSection() {
         >
           <path
             d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-            className="fill-[#FFB800]"
+            className="fill-[#7BA341]"
           ></path>
         </svg>
       </div>

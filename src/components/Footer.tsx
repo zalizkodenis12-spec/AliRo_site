@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer id="contacts" className="relative w-full bg-[#FFB800] text-[#0B0C10] pt-8 pb-12 z-20">
+    <footer id="contacts" className="relative w-full bg-[#7BA341] text-[#0B0C10] pt-8 pb-12 z-20">
       
       {/* Top Wave Divider pointing up to ReviewsSection */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform -translate-y-[calc(100%-1px)] z-20 pointer-events-none">
@@ -13,7 +13,7 @@ export default function Footer() {
         >
           <path
             d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-            className="fill-[#FFB800]"
+            className="fill-[#7BA341]"
           ></path>
         </svg>
       </div>
