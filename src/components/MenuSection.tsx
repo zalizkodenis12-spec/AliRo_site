@@ -3,16 +3,14 @@
 import { useState } from "react";
 import BurgerModal from "./BurgerModal";
 
-const BURGERS = [
-  { id: 1, name: "Гострий з халапеньйо", price: "18$", folder: "/images/burger1" },
-  { id: 2, name: "Середземноморський веджі", price: "24$", folder: "/images/burger2" },
-  { id: 3, name: "Хрусткий курячий", price: "16$", folder: "/images/burger3" },
-  { id: 4, name: "BBQ Чізбургер з беконом", price: "19$", folder: "/images/burger4" },
+const COFFEES = [
+  { id: 1, name: "Еспресо", price: "45 ₴" },
+  { id: 2, name: "Американо", price: "55 ₴" },
+  { id: 3, name: "Капучино", price: "75 ₴" },
+  { id: 4, name: "Лате", price: "85 ₴" },
 ];
 
 export default function MenuSection() {
-  const [selectedBurger, setSelectedBurger] = useState<{name: string, folder: string} | null>(null);
-
   return (
     <section id="menu" className="relative w-full bg-[#7BA341] z-20 pb-32">
       {/* Top Smoother Wavy SVG Divider */}
@@ -52,34 +50,21 @@ export default function MenuSection() {
         
         {/* 2 columns grid for both mobile and desktop */}
         <div className="grid grid-cols-2 gap-x-4 md:gap-x-12 gap-y-12 md:gap-y-16">
-          {BURGERS.map((burger) => (
+          {COFFEES.map((item) => (
             <div 
-              key={burger.id}
-              onClick={() => setSelectedBurger({ name: burger.name, folder: burger.folder })}
-              className="group cursor-pointer flex flex-col items-center"
+              key={item.id}
+              className="group flex flex-col items-center"
             >
-              {/* Image using the first frame of its sequence */}
-              <div className="w-full aspect-square bg-white rounded-3xl shadow-lg mb-4 md:mb-6 overflow-hidden relative transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl flex items-center justify-center">
-                <img 
-                  src={`${burger.folder}/ezgif-frame-001.jpg`} 
-                  alt={burger.name} 
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Hover overlay hint */}
-                <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                   <div className="bg-white/90 text-[#0B0C10] font-semibold px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-lg backdrop-blur-sm shadow-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                     Вибух
-                   </div>
-                </div>
+              {/* Light green placeholder */}
+              <div className="w-full aspect-square bg-[#DBFBA9] rounded-3xl shadow-lg mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl">
               </div>
               
               {/* Text Info */}
               <h3 className="text-sm sm:text-lg md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight text-center px-1">
-                {burger.name}
+                {item.name}
               </h3>
               <p className="text-xs sm:text-base md:text-3xl font-medium text-[#0B0C10]/80 mt-1 md:mt-2">
-                {burger.price}
+                {item.price}
               </p>
             </div>
           ))}
@@ -99,14 +84,6 @@ export default function MenuSection() {
           ></path>
         </svg>
       </div>
-
-      {/* The isolated modal for the burger explosion */}
-      <BurgerModal 
-        isOpen={selectedBurger !== null}
-        burgerName={selectedBurger?.name || ""}
-        folderPath={selectedBurger?.folder || ""}
-        onClose={() => setSelectedBurger(null)}
-      />
     </section>
   );
 }
