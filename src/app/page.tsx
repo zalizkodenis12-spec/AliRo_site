@@ -38,19 +38,19 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full pt-4 pb-6 bg-[#7BA341] z-50">
         <div className="relative z-10 flex items-center w-full px-6 md:px-16">
           {/* Left Navigation Links */}
-          <div className="hidden md:flex flex-1 items-center justify-between pr-12 lg:pr-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
+          <div className="hidden md:flex flex-1 items-center justify-between pr-12 lg:pr-32 font-sans font-semibold text-sm tracking-widest uppercase text-white">
             <a href="#" className="hover:text-white transition-colors cursor-pointer">Головна</a>
             <a href="#about" className="hover:text-white transition-colors cursor-pointer">Про нас</a>
             <a href="#history" className="hover:text-white transition-colors cursor-pointer">Історія</a>
           </div>
 
           {/* Logo (Center) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-4xl font-serif font-bold text-[#0B0C10] tracking-wider cursor-pointer">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-4xl font-serif font-bold text-white tracking-wider cursor-pointer">
             <span style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>AliRo</span>
           </div>
 
           {/* Right Navigation Links */}
-          <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-[#0B0C10]">
+          <div className="hidden md:flex flex-1 items-center justify-between pl-12 lg:pl-32 font-sans font-semibold text-sm tracking-widest uppercase text-white">
             <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Меню</a>
             <a href="#reviews" className="hover:text-white transition-colors cursor-pointer">Відгуки</a>
             <a href="#contacts" className="hover:text-white transition-colors cursor-pointer">Контакти</a>
@@ -58,7 +58,7 @@ export default function Home() {
 
           {/* Mobile Hamburger Icon */}
           <button 
-            className="md:hidden flex items-center justify-center p-2 text-[#0B0C10] z-[60] relative"
+            className="md:hidden flex items-center justify-center p-2 text-white z-[60] relative"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ export default function Home() {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-[#7BA341] pb-6 px-6 shadow-xl flex flex-col gap-4 font-sans font-semibold text-lg tracking-widest uppercase text-[#0B0C10] md:hidden z-50 border-t border-[#0B0C10]/10">
+          <div className="absolute top-full left-0 w-full bg-[#7BA341] pb-6 px-6 shadow-xl flex flex-col gap-4 font-sans font-semibold text-lg tracking-widest uppercase text-white md:hidden z-50 border-t border-[#0B0C10]/10">
             <a href="#" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Головна</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Про нас</a>
             <a href="#history" onClick={() => setIsMenuOpen(false)} className="hover:text-white transition-colors cursor-pointer block">Історія</a>

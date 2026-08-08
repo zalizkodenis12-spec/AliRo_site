@@ -44,7 +44,7 @@ export default function MenuSection() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 pt-16 md:pt-24 text-center relative z-10">
-        <h2 className="text-5xl md:text-8xl font-extrabold text-[#0B0C10] mb-12 md:mb-16 tracking-wide drop-shadow-md">
+        <h2 className="text-5xl md:text-8xl font-extrabold text-white mb-12 md:mb-16 tracking-wide drop-shadow-md">
           Ознайомтеся з меню AliRo
         </h2>
         
@@ -60,10 +60,10 @@ export default function MenuSection() {
               </div>
               
               {/* Text Info */}
-              <h3 className="text-sm sm:text-lg md:text-4xl font-bold text-[#0B0C10] transition-colors leading-tight text-center px-1">
+              <h3 className="text-sm sm:text-lg md:text-4xl font-bold text-white transition-colors leading-tight text-center px-1">
                 {item.name}
               </h3>
-              <p className="text-xs sm:text-base md:text-3xl font-medium text-[#0B0C10]/80 mt-1 md:mt-2">
+              <p className="text-xs sm:text-base md:text-3xl font-medium text-white/80 mt-1 md:mt-2">
                 {item.price}
               </p>
             </div>

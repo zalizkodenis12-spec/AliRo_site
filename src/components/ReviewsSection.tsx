@@ -57,7 +57,7 @@ export default function ReviewsSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-serif font-bold text-[#0B0C10] mb-6 md:mb-8"
+            className="text-5xl md:text-8xl font-serif font-bold text-white mb-6 md:mb-8"
           >
             Що кажуть про нас
           </motion.h2>
@@ -87,13 +87,13 @@ export default function ReviewsSection() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-lg md:text-2xl font-medium text-[#0B0C10]/90 mb-8 md:mb-12 leading-relaxed italic relative z-10">
+                <p className="text-lg md:text-2xl font-medium text-white/90 mb-8 md:mb-12 leading-relaxed italic relative z-10">
                   "{review.text}"
                 </p>
               </div>
               
               <div className="relative z-10">
-                <h4 className="text-2xl font-bold font-serif text-[#0B0C10]">{review.name}</h4>
+                <h4 className="text-2xl font-bold font-serif text-white">{review.name}</h4>
                 <p className="text-[#7BA341] font-bold uppercase tracking-widest text-sm mt-2">{review.role}</p>
               </div>
               

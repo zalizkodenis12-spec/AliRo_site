@@ -42,7 +42,7 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-[#0B0C10] flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-white flex flex-col items-center">
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
