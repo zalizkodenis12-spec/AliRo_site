@@ -54,8 +54,8 @@ const ModalScrollBlock = ({ align, title, desc, top }: { align: "left" | "right"
       className={`absolute w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] px-4 md:px-0 z-10`}
       style={{ top, ...(align === "left" ? { left: "5%" } : { right: "5%" }) }}
     >
-      <h3 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-sm">{title}</h3>
-      <p className="text-xl md:text-2xl font-sans font-medium text-white/80 leading-relaxed">{desc}</p>
+      <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-6 drop-shadow-sm">{title}</h3>
+      <p className="text-xl md:text-2xl font-sans font-medium text-[#0B0C10]/80 leading-relaxed">{desc}</p>
     </motion.div>
   );
 };
@@ -118,7 +118,7 @@ export default function BurgerModal({ isOpen, onClose, burgerName, folderPath }:
           ))}
 
           <div className="h-screen flex items-center justify-center sticky top-0 pointer-events-none z-0">
-             <div className="absolute bottom-10 animate-bounce text-white/50 text-sm tracking-widest uppercase font-bold bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
+             <div className="absolute bottom-10 animate-bounce text-[#0B0C10]/50 text-sm tracking-widest uppercase font-bold bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
                Гортайте вниз для вибуху
              </div>
           </div>
