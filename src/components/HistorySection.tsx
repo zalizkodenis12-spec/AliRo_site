@@ -9,7 +9,7 @@ export default function HistorySection() {
       {/* Left Side: Header Image (Sticky only on desktop) */}
       <div className="w-full md:w-1/2 h-[40vh] md:h-screen relative md:sticky top-0 bg-[#F9F9F9] flex flex-col items-center justify-center overflow-hidden">
         {/* Light background image */}
-        <div className="absolute inset-0 opacity-60 bg-[url('https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=800')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 opacity-60 bg-[url('/coffee-cup.png')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-[#DBFBA9]/70"></div>
         
         <h2 className="text-5xl md:text-8xl font-serif font-bold text-[#0B0C10] relative z-10 text-center mb-4 md:mb-6 drop-shadow-sm px-4">
