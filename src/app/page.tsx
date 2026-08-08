@@ -30,9 +30,9 @@ export default function Home() {
             <a href="#history" className="hover:text-white transition-colors cursor-pointer">Історія</a>
           </div>
 
-          {/* Center Logo (Handwritten / Caveat) */}
-          <div className="flex-1 md:flex-none text-left md:text-center text-4xl md:text-5xl font-bold text-[#0B0C10] whitespace-nowrap md:px-8">
-            BurgerMax
+          {/* Logo (Center) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-4xl font-serif font-bold text-[#0B0C10] tracking-wider cursor-pointer">
+            <span style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>AliRo</span>
           </div>
 
           {/* Right Navigation Links */}
