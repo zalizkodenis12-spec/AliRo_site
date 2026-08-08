@@ -73,24 +73,16 @@ export default function ReviewsSection() {
         </div>
 
         <div className="relative w-full max-w-7xl mx-auto px-4 md:px-12 mt-4 md:mt-8">
-          {/* Custom Drawn Left Arrow */}
-          <div className="swiper-button-prev-reviews absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:-translate-x-1 transition-transform">
-             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
-                <path d="M60,15 C45,35 35,45 15,50 C35,55 45,65 60,85 M20,50 C40,48 60,52 85,50" />
-             </svg>
-          </div>
-
           <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation={{ nextEl: '.swiper-button-next-reviews', prevEl: '.swiper-button-prev-reviews' }}
+            modules={[Autoplay]}
             loop={true}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
               768: { slidesPerView: 3, spaceBetween: 40 }
             }}
-            className="w-[75vw] md:w-full mx-auto"
+            className="w-[85vw] md:w-full mx-auto"
           >
             {[...REVIEWS, ...REVIEWS].map((review, idx) => (
               <SwiperSlide key={idx}>
@@ -125,13 +117,6 @@ export default function ReviewsSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Custom Drawn Right Arrow */}
-          <div className="swiper-button-next-reviews absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:translate-x-1 transition-transform">
-             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
-                <path d="M40,15 C55,35 65,45 85,50 C65,55 55,65 40,85 M80,50 C60,48 40,52 15,50" />
-             </svg>
-          </div>
         </div>
       </div>
     </section>
