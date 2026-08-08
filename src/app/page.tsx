@@ -84,44 +84,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Huge Background Text (Fades out with scroll) */}
-      <motion.div 
-        style={{ opacity: burgerOpacity }}
-        className="hidden md:flex fixed inset-0 w-full h-screen items-center justify-between z-0 pointer-events-none px-[4vw]"
-      >
-        <h1 
-          className="relative text-[18vw] md:text-[14vw] font-serif text-[#0B0C10] font-bold flex w-full justify-between"
-          style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-        >
-          {/* Left Side: B U R */}
-          <div className="flex w-[40%] justify-between">
-            <span>B</span>
-            <span>U</span>
-            <span>R</span>
-          </div>
-
-          {/* Large Center Gap for the Burger to prevent overlap */}
-          <div className="w-[20%] flex-shrink-0"></div>
-
-          {/* Right Side: G E R */}
-          <div className="flex w-[40%] justify-between">
-            <span>G</span>
-            <span>E</span>
-            <span>R</span>
-          </div>
-          
-          {/* White occlusion overlay to hide the middle letters 'R' and 'G' behind the burger */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[150%] bg-white rounded-[50%] blur-xl"></div>
-        </h1>
-      </motion.div>
-
       {/* Background Canvas Sequence with mix-blend-multiply to remove white background */}
       <div className="relative z-10 mix-blend-multiply">
         <CanvasSequence folderPath="/images_new" frameCount={120} fileExtension=".png" />
       </div>
 
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
-      <div className="relative z-10 w-full h-[400vh]">
+      <div className="relative z-10 w-full h-[200vh]">
         {/* Scroll blocks removed as requested */}
       </div>
 
