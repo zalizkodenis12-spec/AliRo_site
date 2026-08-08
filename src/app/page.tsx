@@ -9,7 +9,7 @@ import AboutSection from "@/components/AboutSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent, useMotionValue } from "framer-motion";
 
 
 export default function Home() {
@@ -20,12 +20,18 @@ export default function Home() {
     target: spacerRef,
     offset: ["start start", "end end"]
   });
-  // Fade out the BURGER text as the user scrolls down the first 600px
-  const burgerOpacity = useTransform(scrollY, [0, 600], [0.9, 0]);
+  
+  // Track the maximum scroll progress to ensure the text only fades in and never fades out
+  const maxScroll = useMotionValue(0);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > maxScroll.get()) {
+      maxScroll.set(latest);
+    }
+  });
 
-  // Fade in text overlay at the end of scroll sequence
-  const textOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
-  const pointerEvents = useTransform(scrollYProgress, [0.85, 0.95], ["none", "auto"]);
+  // Fade in text overlay at the end of scroll sequence based on maxScroll
+  const textOpacity = useTransform(maxScroll, [0.85, 0.95], [0, 1]);
+  const pointerEvents = useTransform(maxScroll, [0.85, 0.95], ["none", "auto"]);
 
   return (
     <main className="relative w-full bg-white">
