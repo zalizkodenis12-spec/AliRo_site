@@ -1,7 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 const REVIEWS = [
   {
     name: "Гість AliRo",
@@ -69,42 +72,66 @@ export default function ReviewsSection() {
           ></motion.div>
         </div>
 
-        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory px-4 md:px-0" style={{ scrollbarWidth: 'none' }}>
-          {REVIEWS.map((review, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
-              className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-[#DBFBA9]/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-[#FFB800] mb-6 md:mb-8 flex gap-1">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-7 md:h-7 drop-shadow-sm">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
-                    </svg>
-                  ))}
+        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-12 mt-4 md:mt-8">
+          {/* Custom Drawn Left Arrow */}
+          <div className="swiper-button-prev-reviews absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:-translate-x-1 transition-transform">
+             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
+                <path d="M60,15 C45,35 35,45 15,50 C35,55 45,65 60,85 M20,50 C40,48 60,52 85,50" />
+             </svg>
+          </div>
+
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={{ nextEl: '.swiper-button-next-reviews', prevEl: '.swiper-button-prev-reviews' }}
+            loop={true}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              768: { slidesPerView: 3, spaceBetween: 40 }
+            }}
+            className="w-[75vw] md:w-full mx-auto"
+          >
+            {[...REVIEWS, ...REVIEWS].map((review, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="h-full cursor-grab active:cursor-grabbing px-2 py-4">
+                  <div className="bg-[#DBFBA9]/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between h-full">
+                    <div>
+                      <div className="text-[#FFB800] mb-6 md:mb-8 flex gap-1">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-7 md:h-7 drop-shadow-sm">
+                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-lg md:text-2xl font-medium text-[#0B0C10]/90 mb-8 md:mb-12 leading-relaxed italic relative z-10">
+                        "{review.text}"
+                      </p>
+                    </div>
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-2xl font-bold font-serif text-[#0B0C10]">{review.name}</h4>
+                      <p className="text-[#7BA341] font-bold uppercase tracking-widest text-sm mt-2">{review.role}</p>
+                    </div>
+                    
+                    {/* Quote icon background decoration */}
+                    <div className="absolute bottom-6 right-6 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-300 pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-32 h-32">
+                        <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.43 3.43 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-lg md:text-2xl font-medium text-[#0B0C10]/90 mb-8 md:mb-12 leading-relaxed italic relative z-10">
-                  "{review.text}"
-                </p>
-              </div>
-              
-              <div className="relative z-10">
-                <h4 className="text-2xl font-bold font-serif text-[#0B0C10]">{review.name}</h4>
-                <p className="text-[#7BA341] font-bold uppercase tracking-widest text-sm mt-2">{review.role}</p>
-              </div>
-              
-              {/* Quote icon background decoration */}
-              <div className="absolute bottom-6 right-6 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-300 pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-32 h-32">
-                  <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.43 3.43 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </motion.div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Custom Drawn Right Arrow */}
+          <div className="swiper-button-next-reviews absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:translate-x-1 transition-transform">
+             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
+                <path d="M40,15 C55,35 65,45 85,50 C65,55 55,65 40,85 M80,50 C60,48 40,52 15,50" />
+             </svg>
+          </div>
         </div>
       </div>
     </section>

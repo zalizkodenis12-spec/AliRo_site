@@ -53,16 +53,18 @@ export default function AboutSection() {
           className="text-center"
         >
           <h2 className="text-5xl md:text-8xl font-serif font-bold mb-6 md:mb-8 drop-shadow-sm">Хто ми такі?</h2>
-          <p className="text-xl md:text-3xl font-medium max-w-4xl mx-auto leading-relaxed mb-16 md:mb-24">
+          <p className="text-xl md:text-3xl font-medium max-w-4xl mx-auto leading-relaxed mb-8 md:mb-24">
             Ми — невелика команда, яка вірить що кава й десерти можуть бути частиною теплих спогадів. 
             Готуємо так, щоб кожна чашка нагадувала смак дитинства — просто, затишно, з душею.
           </p>
         </motion.div>
 
-        <div className="relative w-full max-w-5xl mx-auto px-4 md:px-12 mt-8">
+        <div className="relative w-full max-w-5xl mx-auto px-4 md:px-12 mt-4 md:mt-8">
           {/* Custom Drawn Left Arrow */}
           <div className="swiper-button-prev-custom absolute left-0 md:-left-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:-translate-x-1 transition-transform">
-             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}><path d="M15 18l-6-6 6-6"/></svg>
+             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
+                <path d="M60,15 C45,35 35,45 15,50 C35,55 45,65 60,85 M20,50 C40,48 60,52 85,50" />
+             </svg>
           </div>
           
           <Swiper
@@ -154,7 +156,9 @@ export default function AboutSection() {
 
           {/* Custom Drawn Right Arrow */}
           <div className="swiper-button-next-custom absolute right-0 md:-right-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer hover:translate-x-1 transition-transform">
-             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}><path d="M9 18l6-6-6-6"/></svg>
+             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="#0B0C10" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" }}>
+                <path d="M40,15 C55,35 65,45 85,50 C65,55 55,65 40,85 M80,50 C60,48 40,52 15,50" />
+             </svg>
           </div>
         </div>
       </div>
