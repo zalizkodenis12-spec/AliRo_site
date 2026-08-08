@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const REVIEWS = [
   {
     name: "Гість AliRo",
-    role: "Місцевий гурман",
+    role: "Постійний клієнт",
     text: "Одна з найзатишніших та найдомашніших:) кав'ярень Вінниці з претензією отримати народну популярність в мікрорайоні Вишенька.",
     rating: 5,
   },
   {
     name: "Гість AliRo",
-    role: "Фуд-блогер",
+    role: "Постійний клієнт",
     text: "Дуже класне обслуговування! Всі баристи дуже приємні, привітні, чують всі прохання гостя, завжди виходиш від них з гарним настроєм.",
     rating: 5,
   },
@@ -94,7 +94,7 @@ export default function ReviewsSection() {
               
               <div className="relative z-10">
                 <h4 className="text-2xl font-bold font-serif text-[#0B0C10]">{review.name}</h4>
-                <p className="text-[#FFB800] font-bold uppercase tracking-widest text-sm mt-2">{review.role}</p>
+                <p className="text-[#7BA341] font-bold uppercase tracking-widest text-sm mt-2">{review.role}</p>
               </div>
               
               {/* Quote icon background decoration */}
