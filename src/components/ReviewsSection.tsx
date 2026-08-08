@@ -32,7 +32,7 @@ const BURGER_IMAGES = [
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="relative w-full bg-white z-10 py-16 md:py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+    <section id="reviews" className="relative w-full bg-[#DBFBA9] z-10 py-16 md:py-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
       
       {/* Infinite scrolling images in the background */}
       <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex gap-8 opacity-[0.12] pointer-events-none -rotate-3 scale-110">
@@ -77,7 +77,7 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
+              className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-[#DBFBA9]/95 backdrop-blur-xl border border-black/5 p-6 md:p-10 rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative group flex flex-col justify-between"
             >
               <div>
                 <div className="text-[#FFB800] mb-6 md:mb-8 flex gap-1">

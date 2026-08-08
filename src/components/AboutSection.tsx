@@ -122,7 +122,7 @@ export default function AboutSection() {
         >
           <path
             d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-            className="fill-[#FFB800]"
+            className="fill-[#7BA341]"
           ></path>
         </svg>
       </div>
