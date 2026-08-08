@@ -22,10 +22,11 @@ export default function Home() {
   });
   
   // Fade in text overlay at the end of scroll sequence.
-  // It will naturally be covered by the next section (MenuSection) sliding up.
-  // This overlay will NOT fade out going down.
-  const textOpacity = useTransform(scrollYProgress, [0.85, 0.96], [0, 1]);
-  const pointerEvents = useTransform(textOpacity, (v) => v > 0.5 ? "auto" : "none");
+  const [isEndTextVisible, setIsEndTextVisible] = useState(false);
+  
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setIsEndTextVisible(latest > 0.85);
+  });
 
   // Fade out starting block when scrolling down
   const startBlockOpacity = useTransform(scrollY, [0, 400], [1, 0]);
@@ -133,9 +134,8 @@ export default function Home() {
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
       <div ref={spacerRef} className="relative z-10 w-full h-[650vh]">
         {/* Overlay text that fades in at the end of the scroll sequence */}
-        <motion.div 
-          style={{ opacity: textOpacity }}
-          className="sticky top-0 w-full h-screen flex flex-col items-center justify-center pointer-events-none"
+        <div 
+          className={`sticky top-0 w-full h-screen flex flex-col items-center justify-center transition-all duration-1000 ${isEndTextVisible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         >
           <div className="flex items-center gap-4 mb-4 mt-16 md:mt-0">
             <div className="w-8 md:w-16 h-[2px] bg-[#7BA341]"></div>
@@ -145,13 +145,12 @@ export default function Home() {
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 text-center px-4" style={{ textShadow: "0 4px 20px rgba(0,0,0,0.6)" }}>
             Ваша щоденна кава
           </h2>
-          <motion.button 
-            style={{ pointerEvents: pointerEvents as any }}
+          <button 
             className="bg-[#7BA341] hover:bg-[#6A8D38] text-white px-10 py-4 rounded-full text-lg md:text-xl font-bold tracking-wide shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
             Замовити
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
 
       {/* The new Menu Section that slides up after the animation finishes */}
