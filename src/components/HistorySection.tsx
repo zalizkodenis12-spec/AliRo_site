@@ -17,7 +17,7 @@ export default function HistorySection() {
         </h2>
         <div className="w-16 md:w-24 h-1 bg-[#7BA341] relative z-10 mb-4 md:mb-6"></div>
         <p className="text-[#0B0C10]/80 text-lg md:text-2xl font-medium relative z-10 font-sans text-center px-8">
-          Як ми створювали BurgerMax
+          Як з'явилась AliRo
         </p>
       </div>
 
@@ -30,23 +30,10 @@ export default function HistorySection() {
           viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
           className="mb-16 md:mb-[25vh]"
         >
-          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2015</span>
-          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Гараж і перший гриль</h3>
+          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2019</span>
+          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Ідея за чашкою кави</h3>
           <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
-            Все почалося з любові до м'яса. Ми купили старий вугільний гриль, поставили його в гаражі і почали експериментувати з пропорціями яловичини, спецій та температурою. Ми просто хотіли зробити ідеальний бургер для друзів.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
-          className="mb-16 md:mb-[25vh]"
-        >
-          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2018</span>
-          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Секретний соус</h3>
-          <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
-            Після сотень спроб ми винайшли той самий "Секретний соус BurgerMax". Це був переломний момент. Чутки про наші бургери розлетілися містом, і до нас почали вишукуватися черги.
+            Все почалося з простої думки — у Вінниці не вистачало місця, куди хочеться приходити знову. Не просто кав'ярні, а місця що нагадує смак дитинства і тепло рідного дому.
           </p>
         </motion.div>
 
@@ -57,9 +44,9 @@ export default function HistorySection() {
           className="mb-16 md:mb-[25vh]"
         >
           <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2021</span>
-          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Перший заклад</h3>
+          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Перші двері AliRo</h3>
           <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
-            Ми відкрили двері нашого першого справжнього закладу. Дизайн у стилі лофт, відкрита кухня, де видно вогонь, і незмінна якість інгредієнтів. Ми відмовилися від заморозки назавжди.
+            Ми відкрили невеличку кав'ярню на Вишенці. Без пафосу, без зайвого — тільки свіжа кава, домашня випічка і атмосфера в якій хочеться затриматись. Перші гості стали друзями закладу.
           </p>
         </motion.div>
 
@@ -70,9 +57,9 @@ export default function HistorySection() {
           className="mb-8 md:mb-[10vh]"
         >
           <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">Сьогодні</span>
-          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Більше ніж просто їжа</h3>
+          <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Місце для всієї родини</h3>
           <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
-            BurgerMax — це емоція. Ми продовжуємо шукати найкращих локальних фермерів і створювати нові смаки, щоб кожен ваш візит був таким же вражаючим, як і перший відкус нашого фірмового чізбургера.
+            AliRo стала тим самим затишним куточком Вінниці, куди приходять цілими родинами. Ми й далі шукаємо найкращі зерна, печемо десерти щоранку і бережемо ту саму домашню атмосферу з першого дня.
           </p>
         </motion.div>
 
