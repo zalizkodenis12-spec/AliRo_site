@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import CanvasSequence from "@/components/CanvasSequence";
 import MenuSection from "@/components/MenuSection";
@@ -14,6 +14,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const spacerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   // Fade out the BURGER text as the user scrolls down the first 600px
   const burgerOpacity = useTransform(scrollY, [0, 600], [0.9, 0]);
@@ -86,11 +87,11 @@ export default function Home() {
 
       {/* Background Canvas Sequence with mix-blend-multiply to remove white background */}
       <div className="relative z-10 mix-blend-multiply">
-        <CanvasSequence folderPath="/images_new" frameCount={120} fileExtension=".png" />
+        <CanvasSequence scrollContainerRef={spacerRef} folderPath="/images_new" frameCount={120} fileExtension=".png" />
       </div>
 
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
-      <div className="relative z-10 w-full h-[200vh]">
+      <div ref={spacerRef} className="relative z-10 w-full h-[200vh]">
         {/* Scroll blocks removed as requested */}
       </div>
 

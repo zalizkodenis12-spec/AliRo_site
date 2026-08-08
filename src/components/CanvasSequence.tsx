@@ -20,9 +20,9 @@ export default function CanvasSequence({
 }: CanvasSequenceProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
-  // Use either the provided container or the default window scroll
+  // Track the exact scroll position of the provided container
   const { scrollYProgress } = useScroll(
-    scrollContainerRef ? { container: scrollContainerRef } : undefined
+    scrollContainerRef ? { target: scrollContainerRef, offset: ["start start", "end start"] } : undefined
   );
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -53,9 +53,9 @@ export default function CanvasSequence({
     setImages(loadedImages);
   }, [folderPath, frameCount, fileExtension]);
 
-  // Map scroll progress (0 to 1) to frame index (0 to frameCount - 1)
-  // We use [0, 0.7] so the animation finishes before the bottom sections (yellow menu, white footer) scroll into view
-  const frameIndex = useTransform(scrollYProgress, [0, 0.7], [0, frameCount - 1]);
+  // If a container is provided, it accurately goes from 0 to 1 over that exact container's height.
+  // Otherwise it falls back to 0-0.7 of the whole page.
+  const frameIndex = useTransform(scrollYProgress, scrollContainerRef ? [0, 1] : [0, 0.7], [0, frameCount - 1]);
 
   useMotionValueEvent(frameIndex, "change", (latest) => {
     if (!imagesLoaded || !canvasRef.current || !images.length) return;
@@ -75,7 +75,7 @@ export default function CanvasSequence({
       
       const hRatio = canvas.width / img.width;
       const vRatio = canvas.height / img.height;
-      const ratio = Math.min(hRatio, vRatio); // Use Math.min for contain instead of cover
+      const ratio = Math.max(hRatio, vRatio); // Use Math.max for cover (full screen)
       
       const centerShift_x = (canvas.width - img.width * ratio) / 2;
       const centerShift_y = (canvas.height - img.height * ratio) / 2;
@@ -116,7 +116,7 @@ export default function CanvasSequence({
             if (!ctx) return;
             const hRatio = canvas.width / img.width;
             const vRatio = canvas.height / img.height;
-            const ratio = Math.min(hRatio, vRatio); // Use Math.min for contain
+            const ratio = Math.max(hRatio, vRatio); // Use Math.max for cover (full screen)
             
             const centerShift_x = (canvas.width - img.width * ratio) / 2;
             const centerShift_y = (canvas.height - img.height * ratio) / 2;
@@ -150,7 +150,7 @@ export default function CanvasSequence({
       )}
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover"
       />
     </div>
   );
