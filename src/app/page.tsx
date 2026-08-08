@@ -91,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
-      <div ref={spacerRef} className="relative z-10 w-full h-[800vh]">
+      <div ref={spacerRef} className="relative z-10 w-full h-[650vh]">
         {/* Scroll blocks removed as requested */}
       </div>
 
