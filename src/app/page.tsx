@@ -16,8 +16,16 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const spacerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll({
+    target: spacerRef,
+    offset: ["start start", "end end"]
+  });
   // Fade out the BURGER text as the user scrolls down the first 600px
   const burgerOpacity = useTransform(scrollY, [0, 600], [0.9, 0]);
+
+  // Fade in text overlay at the end of scroll sequence
+  const textOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
+  const pointerEvents = useTransform(scrollYProgress, [0.85, 0.95], ["none", "auto"]);
 
   return (
     <main className="relative w-full bg-white">
@@ -89,6 +97,27 @@ export default function Home() {
       <div className="relative z-10 mix-blend-multiply">
         <CanvasSequence scrollContainerRef={spacerRef} folderPath="/images_new" frameCount={120} fileExtension=".png" />
       </div>
+
+      {/* Overlay text that fades in at the end of the scroll sequence */}
+      <motion.div 
+        style={{ opacity: textOpacity }}
+        className="fixed inset-0 flex flex-col items-center justify-center z-20 pointer-events-none"
+      >
+        <div className="flex items-center gap-4 mb-4 mt-16 md:mt-0">
+          <div className="w-8 md:w-16 h-[2px] bg-[#7BA341]"></div>
+          <span className="font-serif text-sm md:text-lg tracking-widest uppercase text-white drop-shadow-md">AliRo</span>
+          <div className="w-8 md:w-16 h-[2px] bg-[#7BA341]"></div>
+        </div>
+        <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 text-center px-4" style={{ textShadow: "0 4px 20px rgba(0,0,0,0.6)" }}>
+          Ваша щоденна кава
+        </h2>
+        <motion.button 
+          style={{ pointerEvents: pointerEvents as any }}
+          className="bg-[#7BA341] hover:bg-[#6A8D38] text-white px-10 py-4 rounded-full text-lg md:text-xl font-bold tracking-wide shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+        >
+          Замовити
+        </motion.button>
+      </motion.div>
 
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
       <div ref={spacerRef} className="relative z-10 w-full h-[650vh]">
