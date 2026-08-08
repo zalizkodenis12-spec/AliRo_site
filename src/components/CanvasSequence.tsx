@@ -22,7 +22,7 @@ export default function CanvasSequence({
   
   // Track the exact scroll position of the provided container
   const { scrollYProgress } = useScroll(
-    scrollContainerRef ? { target: scrollContainerRef, offset: ["start start", "end start"] } : undefined
+    scrollContainerRef ? { target: scrollContainerRef, offset: ["start start", "end end"] } : undefined
   );
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
