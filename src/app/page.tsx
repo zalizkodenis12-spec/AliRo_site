@@ -124,7 +124,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="text-center px-4"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-extrabold text-[#0B0C10] mt-4 mb-8 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-extrabold text-white mt-4 mb-8 drop-shadow-2xl" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             Прогорніть, щоб<br/>побачити більше
           </h1>
         </motion.div>
