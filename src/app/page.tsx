@@ -28,10 +28,6 @@ export default function Home() {
     setIsEndTextVisible(latest > 0.85);
   });
 
-  // Fade out starting block when scrolling down
-  const startBlockOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const startBlockPointerEvents = useTransform(startBlockOpacity, (v) => v > 0.5 ? "auto" : "none");
-
   return (
     <main className="relative w-full bg-white">
       {/* Absolute Top Navigation Bar (Disappears on scroll) */}
@@ -102,34 +98,6 @@ export default function Home() {
       <div className="relative z-10 mix-blend-multiply">
         <CanvasSequence scrollContainerRef={spacerRef} folderPath="/images_new" frameCount={120} fileExtension=".png" />
       </div>
-
-      {/* Start Block Overlay (Fades out when scrolling down) */}
-      <motion.div 
-        style={{ opacity: startBlockOpacity, pointerEvents: startBlockPointerEvents as any }}
-        className="fixed inset-0 flex flex-col items-center justify-center z-20 mt-12 md:mt-0"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-center"
-        >
-          <span className="text-[#7BA341] tracking-[0.3em] text-sm md:text-base font-bold uppercase drop-shadow-sm">
-            КАВА ЯК У ДИТИНСТВІ
-          </span>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="text-center px-4"
-        >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-extrabold text-white mt-4 mb-8 drop-shadow-2xl" style={{ textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
-            Прогорніть, щоб<br/>побачити більше
-          </h1>
-        </motion.div>
-      </motion.div>
 
       {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
       <div ref={spacerRef} className="relative z-10 w-full h-[650vh]">
