@@ -65,7 +65,7 @@ export default function ReviewsSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-32 h-1.5 bg-[#FFB800] mx-auto rounded-full"
+            className="w-32 h-1.5 bg-[#7BA341] mx-auto rounded-full"
           ></motion.div>
         </div>
 
