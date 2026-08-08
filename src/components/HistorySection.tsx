@@ -30,7 +30,7 @@ export default function HistorySection() {
           viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
           className="mb-16 md:mb-[25vh]"
         >
-          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2019</span>
+          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2023</span>
           <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Ідея за чашкою кави</h3>
           <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
             Все почалося з простої думки — у Вінниці не вистачало місця, куди хочеться приходити знову. Не просто кав'ярні, а місця що нагадує смак дитинства і тепло рідного дому.
@@ -43,7 +43,7 @@ export default function HistorySection() {
           viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
           className="mb-16 md:mb-[25vh]"
         >
-          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2021</span>
+          <span className="text-[#7BA341] font-bold text-xl md:text-2xl tracking-widest uppercase mb-2 md:mb-4 block">2024</span>
           <h3 className="text-3xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-4 md:mb-6 leading-tight">Перші двері AliRo</h3>
           <p className="text-lg md:text-xl text-[#0B0C10]/80 leading-relaxed font-medium">
             Ми відкрили невеличку кав'ярню на Вишенці. Без пафосу, без зайвого — тільки свіжа кава, домашня випічка і атмосфера в якій хочеться затриматись. Перші гості стали друзями закладу.
