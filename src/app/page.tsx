@@ -23,6 +23,7 @@ export default function Home() {
   
   // Fade in text overlay at the end of scroll sequence.
   // It will naturally be covered by the next section (MenuSection) sliding up.
+  // This overlay will NOT fade out going down.
   const textOpacity = useTransform(scrollYProgress, [0.85, 0.96], [0, 1]);
   const pointerEvents = useTransform(textOpacity, (v) => v > 0.5 ? "auto" : "none");
 
