@@ -114,7 +114,7 @@ export default function Home() {
           className="text-center"
         >
           <span className="text-[#7BA341] tracking-[0.3em] text-sm md:text-base font-bold uppercase drop-shadow-sm">
-            СВІЖА КАВА · ЩОДНЯ
+            КАВА З ХАРАКТЕРОМ
           </span>
         </motion.div>
         
