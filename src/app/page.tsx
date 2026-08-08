@@ -11,25 +11,6 @@ import Footer from "@/components/Footer";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Helper component for scrollytelling text blocks
-const ScrollBlock = ({ align, title, desc, top }: { align: "left" | "right", title: string, desc: string, top: string }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -100 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false, margin: "-30% 0px -30% 0px" }}
-      className={`absolute w-[90%] left-[5%] md:w-full max-w-[320px] lg:max-w-[380px] p-0 z-10 ${
-        align === "left" ? "md:left-[5%] md:right-auto" : "md:right-[5%] md:left-auto"
-      }`}
-      style={{ top }}
-    >
-      <h3 className="text-2xl md:text-5xl font-serif font-bold text-[#0B0C10] mb-3 md:mb-6 drop-shadow-sm whitespace-pre-line">{title}</h3>
-      <p className="text-base md:text-2xl font-sans font-medium text-[#0B0C10] leading-relaxed">{desc}</p>
-    </motion.div>
-  );
-};
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,47 +117,12 @@ export default function Home() {
 
       {/* Background Canvas Sequence with mix-blend-multiply to remove white background */}
       <div className="relative z-10 mix-blend-multiply">
-        <CanvasSequence />
+        <CanvasSequence folderPath="/images_new" frameCount={120} fileExtension=".png" />
       </div>
 
-      {/* Scrollable Content Container for Scrollytelling (1000vh height drives the canvas animation) */}
-      <div className="relative z-10 w-full h-[1000vh]">
-        <ScrollBlock 
-          align="left" 
-          top="150vh"
-          title="Свіжі інгредієнти" 
-          desc="Тільки найкраще відбірне м'ясо та хрусткі овочі від локальних фермерів. Ми обираємо безкомпромісну якість, яку ви можете відчути в кожному шматочку." 
-        />
-        <ScrollBlock 
-          align="right" 
-          top="280vh"
-          title="Крафтова булочка" 
-          desc="М'яка, пухка, злегка підсмажена бріош, яка не розмокає і ідеально тримає форму. Випікається щоранку за власною рецептурою." 
-        />
-        <ScrollBlock 
-          align="left" 
-          top="410vh"
-          title="Ідеальне просмаження" 
-          desc="Соковита котлета, приготована саме так, як ви любите. Максимум насиченого смаку, який розкривається з першим укусом." 
-        />
-        <ScrollBlock 
-          align="right" 
-          top="540vh"
-          title="Авторські рецепти" 
-          desc="Наші фірмові соуси – це секрет, який робить смак неповторним. Ідеальні пропорції, розроблені справжніми фанатами бургерної культури." 
-        />
-        <ScrollBlock 
-          align="left" 
-          top="670vh"
-          title="Живий вогонь" 
-          desc="Наші котлети смажаться виключно на відкритому вогні. Це додає м'ясу неповторний аромат і хрустку скоринку, зберігаючи соковитість." 
-        />
-        <ScrollBlock 
-          align="right" 
-          top="800vh"
-          title="Атмосфера смаку" 
-          desc="Бургер – це не просто їжа, це емоція. Насолоджуйтесь кожною хвилиною та кожним смаком у затишній атмосфері нашого закладу." 
-        />
+      {/* Scrollable Content Container for Scrollytelling (height drives the canvas animation) */}
+      <div className="relative z-10 w-full h-[400vh]">
+        {/* Scroll blocks removed as requested */}
       </div>
 
       {/* The new Menu Section that slides up after the animation finishes */}

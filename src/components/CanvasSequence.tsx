@@ -8,9 +8,16 @@ const FRAME_COUNT = 240;
 interface CanvasSequenceProps {
   scrollContainerRef?: RefObject<HTMLElement | null>;
   folderPath?: string;
+  frameCount?: number;
+  fileExtension?: string;
 }
 
-export default function CanvasSequence({ scrollContainerRef, folderPath = "/images" }: CanvasSequenceProps) {
+export default function CanvasSequence({ 
+  scrollContainerRef, 
+  folderPath = "/images",
+  frameCount = 240,
+  fileExtension = ".jpg"
+}: CanvasSequenceProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   // Use either the provided container or the default window scroll
@@ -29,26 +36,26 @@ export default function CanvasSequence({ scrollContainerRef, folderPath = "/imag
     setImagesLoaded(false);
     setImages([]);
 
-    for (let i = 1; i <= FRAME_COUNT; i++) {
+    for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
-      // File names: ezgif-frame-001.jpg to ezgif-frame-240.jpg
+      // File names: ezgif-frame-001.ext
       const frameNum = i.toString().padStart(3, "0");
-      img.src = `${folderPath}/ezgif-frame-${frameNum}.jpg`;
+      img.src = `${folderPath}/ezgif-frame-${frameNum}${fileExtension}`;
       
       img.onload = () => {
         loadedCount++;
-        if (loadedCount === FRAME_COUNT) {
+        if (loadedCount === frameCount) {
           setImagesLoaded(true);
         }
       };
       loadedImages.push(img);
     }
     setImages(loadedImages);
-  }, [folderPath]);
+  }, [folderPath, frameCount, fileExtension]);
 
-  // Map scroll progress (0 to 1) to frame index (0 to 239)
+  // Map scroll progress (0 to 1) to frame index (0 to frameCount - 1)
   // We use [0, 0.7] so the animation finishes before the bottom sections (yellow menu, white footer) scroll into view
-  const frameIndex = useTransform(scrollYProgress, [0, 0.7], [0, FRAME_COUNT - 1]);
+  const frameIndex = useTransform(scrollYProgress, [0, 0.7], [0, frameCount - 1]);
 
   useMotionValueEvent(frameIndex, "change", (latest) => {
     if (!imagesLoaded || !canvasRef.current || !images.length) return;
