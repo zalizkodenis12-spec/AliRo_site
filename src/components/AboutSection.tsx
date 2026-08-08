@@ -77,7 +77,7 @@ export default function AboutSection() {
             breakpoints={{
               768: { slidesPerView: 3, spaceBetween: 40 }
             }}
-            className="w-[75vw] md:w-full mx-auto"
+            className="w-full"
           >
             {/* Feature 1 */}
             <SwiperSlide>

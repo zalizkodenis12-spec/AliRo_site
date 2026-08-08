@@ -82,7 +82,7 @@ export default function ReviewsSection() {
             breakpoints={{
               768: { slidesPerView: 3, spaceBetween: 40 }
             }}
-            className="w-[85vw] md:w-full mx-auto"
+            className="w-full"
           >
             {[...REVIEWS, ...REVIEWS].map((review, idx) => (
               <SwiperSlide key={idx}>
