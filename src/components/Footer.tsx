@@ -22,7 +22,7 @@ export default function Footer() {
         
         {/* Logo and brief */}
         <div className="md:col-span-4 flex flex-col items-center md:items-start mb-6 md:mb-0">
-          <h2 className="text-5xl font-black font-serif text-[#0B0C10] tracking-tighter mb-4 md:mb-6 drop-shadow-sm">AliRo</h2>
+          <h2 className="text-6xl font-black text-[#0B0C10] tracking-tighter mb-4 md:mb-6 drop-shadow-sm">AliRo</h2>
           <p className="text-[#0B0C10]/80 text-lg leading-relaxed max-w-sm font-medium">
             Затишна кав'ярня на Вишенці. Смак, який повертає у дитинство.
           </p>

@@ -41,8 +41,8 @@ export default function Home() {
           </div>
 
           {/* Logo (Center) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-4xl font-serif font-bold text-[#0B0C10] tracking-wider cursor-pointer">
-            <span style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>AliRo</span>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl md:text-5xl font-bold text-[#0B0C10] tracking-wider cursor-pointer">
+            <span>AliRo</span>
           </div>
 
           {/* Right Navigation Links */}
