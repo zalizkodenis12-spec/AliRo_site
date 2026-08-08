@@ -24,10 +24,10 @@ const REVIEWS = [
 ];
 
 const BURGER_IMAGES = [
-  "/images/burger1/ezgif-frame-001.jpg",
-  "/images/burger2/ezgif-frame-001.jpg",
-  "/images/burger3/ezgif-frame-001.jpg",
-  "/images/burger4/ezgif-frame-001.jpg",
+  "/coffee-cup.png",
+  "/coffee-cup.png",
+  "/coffee-cup.png",
+  "/coffee-cup.png",
 ];
 
 export default function ReviewsSection() {
