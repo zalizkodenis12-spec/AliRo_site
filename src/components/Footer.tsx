@@ -39,9 +39,6 @@ export default function Footer() {
             <p className="text-[#0B0C10]/90 mb-4 md:mb-6 text-xs md:text-xl flex items-center gap-2 font-semibold">
               <span className="text-base md:text-2xl">📞</span> 067 900 9315
             </p>
-            <p className="text-[#0B0C10] font-black text-[10px] md:text-lg bg-white/40 px-2 py-2 md:px-5 md:py-3 rounded-lg md:rounded-xl inline-block shadow-sm">
-              Пн–Нд: 10:00–21:00
-            </p>
           </div>
 
           {/* Socials */}
@@ -61,7 +58,13 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="w-full text-center text-[#0B0C10]/40 text-sm mt-16 md:mt-24 pt-8 border-t border-[#0B0C10]/10 max-w-7xl mx-auto px-6 font-semibold">
+      <div className="w-full flex justify-center mt-8 md:mt-16 relative z-10 px-6">
+        <p className="text-[#0B0C10] font-black text-sm md:text-xl bg-white/40 px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl inline-block shadow-md text-center">
+          Пн–Нд: 10:00–21:00
+        </p>
+      </div>
+
+      <div className="w-full text-center text-[#0B0C10]/40 text-sm mt-12 md:mt-16 pt-8 border-t border-[#0B0C10]/10 max-w-7xl mx-auto px-6 font-semibold">
         © 2026 AliRo. Всі права захищено.
       </div>
     </footer>
