@@ -21,17 +21,9 @@ export default function Home() {
     offset: ["start start", "end end"]
   });
   
-  // Track the maximum scroll progress to ensure the text only fades in and never fades out
-  const maxScroll = useMotionValue(0);
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > maxScroll.get()) {
-      maxScroll.set(latest);
-    }
-  });
-
-  // Fade in text overlay at the end of scroll sequence based on maxScroll
-  const textOpacity = useTransform(maxScroll, [0.85, 0.95], [0, 1]);
-  const pointerEvents = useTransform(maxScroll, [0.85, 0.95], ["none", "auto"]);
+  // Fade in text overlay at the end of scroll sequence and fade it out just as the next section comes up
+  const textOpacity = useTransform(scrollYProgress, [0.85, 0.90, 0.98, 1], [0, 1, 1, 0]);
+  const pointerEvents = useTransform(textOpacity, (v) => v > 0.5 ? "auto" : "none");
 
   return (
     <main className="relative w-full bg-white">
