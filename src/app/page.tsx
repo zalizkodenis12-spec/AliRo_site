@@ -125,19 +125,9 @@ export default function Home() {
           className="text-center px-4"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-extrabold text-[#0B0C10] mt-4 mb-8 drop-shadow-lg">
-            Смак, що завжди<br/>з тобою
+            Прогорніть, щоб<br/>побачити більше
           </h1>
         </motion.div>
-        
-        <motion.a
-          href="#menu"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          className="bg-[#1A1A1A] hover:bg-black text-white px-10 py-4 rounded-full text-lg md:text-xl font-semibold tracking-wide shadow-2xl hover:shadow-black/40 hover:-translate-y-1 transition-all duration-300 inline-block"
-        >
-          Переглянути меню
-        </motion.a>
       </motion.div>
 
       {/* Overlay text that fades in at the end of the scroll sequence */}
